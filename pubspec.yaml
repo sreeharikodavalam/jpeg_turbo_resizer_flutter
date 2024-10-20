@@ -1,6 +1,6 @@
 name: jpeg_turbo_resizer
 description: "A custom Flutter plugin for Windows that enables fast and efficient image resizing using the libjpeg-turbo library. This initial release focuses on resizing JPEG images with high performance. More features, such as additional image processing capabilities, will be added in future updates."
-version: 0.0.1
+version: 0.1.12
 homepage: "https://github.com/sreeharikodavalam/jpeg_turbo_resizer_flutter"
 
 

@@ -1,6 +1,6 @@
-# jpeg_turbo_resizer_example
+# example
 
-Demonstrates how to use the jpeg_turbo_resizer plugin.
+A new Flutter project.
 
 ## Getting Started
 

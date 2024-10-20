@@ -28,6 +28,23 @@ apply_standard_settings(${PLUGIN_NAME})
 set_target_properties(${PLUGIN_NAME} PROPERTIES
         CXX_VISIBILITY_PRESET hidden)
 target_compile_definitions(${PLUGIN_NAME} PRIVATE FLUTTER_PLUGIN_IMPL)
+################ EXIF
+# Add exif-cpp source
+list(APPEND PLUGIN_SOURCES
+        "exif/exif.cpp"
+)
+# Add EXIF library
+add_library(exif STATIC
+        "${CMAKE_CURRENT_SOURCE_DIR}/exif/exif.cpp"
+)
+
+target_include_directories(exif PUBLIC
+        "${CMAKE_CURRENT_SOURCE_DIR}/exif"
+)
+
+# Link EXIF library to your plugin
+target_link_libraries(${PLUGIN_NAME} PRIVATE exif)
+################## EXIF
 
 target_include_directories(${PLUGIN_NAME} INTERFACE
         "${CMAKE_CURRENT_SOURCE_DIR}/include")

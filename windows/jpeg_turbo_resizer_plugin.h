@@ -5,6 +5,7 @@
 #include <flutter/plugin_registrar_windows.h>
 
 #include <memory>
+#include "exif/exif.h"
 
 namespace jpeg_turbo_resizer {
 
@@ -29,7 +30,14 @@ class JpegTurboResizerPlugin : public flutter::Plugin {
   static int resize_jpeg(const char* input_path, const char* output_path, int max_resolution);
 
  private:
-  // ... any private members ...
+    static unsigned char* flip_horizontally(unsigned char* buffer, int width, int height);
+    static unsigned char* flip_vertically(unsigned char* buffer, int width, int height);
+    static unsigned char* rotate_90_cw(unsigned char* buffer, int width, int height);
+    static unsigned char* rotate_90_ccw(unsigned char* buffer, int width, int height);
+    static unsigned char* rotate_180(unsigned char* buffer, int width, int height);
+    static unsigned char* rotate_90_cw_and_flip(unsigned char* buffer, int width, int height);
+
+    // ... any private members ...
 };
 
 }  // namespace jpeg_turbo_resizer
